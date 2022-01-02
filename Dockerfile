@@ -1,8 +1,5 @@
-FROM openjdk
-WORKDIR /app
-
-COPY Main.java /app
-
-RUN javac Main.java # Compile
-
-CMD java test
+FROM java:8  
+COPY . /var/www/java  
+WORKDIR /var/www/java  
+RUN javac Main.java  
+CMD ["java", "Main"]  
